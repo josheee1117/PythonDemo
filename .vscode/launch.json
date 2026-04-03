@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Day1 Quick Run",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/python_basics/2026-04-03/04_vscode_quickstart.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Day1 Debug Demo",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/python_basics/2026-04-03/05_vscode_debug_demo.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
