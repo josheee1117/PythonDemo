@@ -194,7 +194,7 @@ Java 迁移重点：
 
 1. 扫描日志中的知识点与问题
 2. 按主题整理
-3. 输出到 `knowledge_base/`
+3. 输出到 `.pensieve/knowledge/`
 4. 优先沉淀速查表、易错点、Java/Python 对照表
 
 ---
@@ -236,22 +236,26 @@ Java 迁移重点：
 
 ```text
 PythonDemo/
-├── AGENTS.md
-├── LEARNING_SYSTEM.md
-├── CLAUDE.md
+├── AGENTS.md              ← 项目指令入口
+├── LEARNING_SYSTEM.md     ← 学习系统详细规范
+├── CLAUDE.md              ← 辅助入口
 ├── daily_tasks/
 ├── daily_logs/
 ├── weekly_reports/
-├── knowledge_base/
 ├── python_basics/
 │   └── YYYY-MM-DD/
-│       ├── 01_*.md
-│       ├── 02_*.md
-│       ├── 03_*.md
-│       └── 04_*.py
-└── .codex/
-    └── skills/
-        └── pensieve/
+│       ├── 01_start_here.md
+│       ├── 02_lab_*.md
+│       ├── 03_*_lab.py
+│       ├── 04_challenge_*.md
+│       ├── 05_*_challenge.py
+│       ├── 06_taste_*.md
+│       └── 07_*_project.py   ← 每 3-5 天
+└── .pensieve/
+    ├── decisions/
+    ├── knowledge/
+    ├── maxims/
+    └── pipelines/
 ```
 
 ---
@@ -260,4 +264,4 @@ PythonDemo/
 
 - 说 `开始学习` 时，从真实 Day 1 开始
 - 外部模板的历史记录默认无效
-- 若未来调整路线，同时更新 `LEARNING_SYSTEM.md` 和 pensieve
+- 若未来调整路线，同时更新 `LEARNING_SYSTEM.md` 和 `.pensieve/`
