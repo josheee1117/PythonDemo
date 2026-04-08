@@ -1,35 +1,85 @@
 # Project Instructions
-使用中文回复
-## Codex Entry
 
-This file is the primary project instruction entrypoint for Codex.
+使用中文回复。
 
-Before handling study-planning or teaching tasks in this workspace:
+## 项目概述
 
-1. Read `.codex/skills/pensieve/maxims/learning-system.md`
-2. Read `.codex/skills/pensieve/decisions/python-roadmap-for-java.md`
-3. Read `.codex/skills/pensieve/knowledge/user-profile.md`
-4. Read `LEARNING_SYSTEM.md`
+Java 资深开发者（7 年经验）系统转型 Python 的学习项目。
+不是从零学编程，而是建立 Pythonic 思维、补齐工程化能力、形成 Web 后端交付能力。
 
-Do not use `CLAUDE.md` as the source of truth. It is kept only as a migration note.
+## 知识体系
 
-## Project Truth
+- **学习流程与路线** → `LEARNING_SYSTEM.md`
+- **持久化知识库** → `.pensieve/`（decisions / knowledge / maxims / pipelines）
+- **学习材料** → `python_basics/YYYY-MM-DD/`
+- **任务与日志** → `daily_tasks/` / `daily_logs/` / `weekly_reports/`
+- **参考书** → `《Python编程之美：最佳实践指南》.pdf`（Pythonic 风格、习语、陷阱、项目结构、测试）
 
-- This learning project has **not started yet**.
-- The original content was copied from an external Claude template and does **not** represent real progress.
-- The user has **7 years of Java development experience**.
+## 工作规则
 
-## Working Rules
+- 针对 Java 开发者优化学习路径，不做低价值入门重复训练
+- 概念解释优先做 Java → Python 映射
+- 严格工作流：任务 → 学习 → 日志 → 计划 → 周报 → 知识沉淀
+- `开始学习` 触发当日学习流程，`学习结束` 触发日志生成
+- 教学材料标准见 `LEARNING_SYSTEM.md` 第 5 节
+- 任务完成后，值得沉淀的经验使用 `/pensieve self-improve`
 
-- Optimize the learning path for a Java developer transitioning to Python.
-- Do not repeat beginner programming drills unless the user explicitly asks for them.
-- Use strict workflow discipline: task -> study -> log -> next plan -> weekly summary -> knowledge base.
-- When the user says `开始学习`, start from the real Day 1 of this project.
-- When generating materials, prefer concept-first explanation, Java/Python mapping, detailed Chinese comments, and exercises without direct answers.
+## 每日训练结构
 
-## File Roles
+每天至少包含以下 4 个环节，总时长 120-150 分钟：
 
-- `AGENTS.md`: Codex entrypoint and execution rules
-- `LEARNING_SYSTEM.md`: study workflow, roadmap, and material standards
-- `CLAUDE.md`: migration compatibility note only
-- `.codex/skills/pensieve/`: durable memory
+### 1. Lab（引导实验）— 40-50 分钟
+
+LabEx 风格的分步实验，每个 Lab 包含：
+- 明确的学习目标（1-2 个核心概念）
+- 3-6 个短步骤，每步 5-10 分钟
+- 每步都有可运行代码和预期输出
+- starter 文件里的 TODO 不超过 5 个，避免堆砌
+- 步骤间有递进：先观察 → 再修改 → 最后从零写
+
+### 2. Challenge（无引导挑战）— 30-40 分钟
+
+不给步骤指引，只给目标和验证条件：
+- 给出一个小问题（如"实现一个函数，让所有测试通过"）
+- 提供测试文件或断言，不提供实现思路
+- 允许查文档，但不给直接答案
+- 完成后给出参考实现和 Pythonic 改进建议
+
+### 3. Code Taste（代码品味训练）— 20-30 分钟
+
+基于《Python编程之美》中的最佳实践，训练代码审美：
+- **对比阅读**：给出"糟糕写法"和"Pythonic 写法"，解释区别
+- **陷阱识别**：给出含常见错误的代码片段，要求找出问题（可变默认参数、延迟绑定闭包、`import *` 等）
+- **重构练习**：给出 Java 风格的 Python 代码，重构为 Pythonic 风格
+- 每次只聚焦 1-2 个品味点，来源参考《Python编程之美》第 4 章
+
+### 4. 日结回顾 — 10 分钟
+
+- 用自己的话总结今天的核心概念
+- 写出 1 个 Java → Python 的关键差异
+- 标记未理解的问题，带入下次学习
+
+## 训练进阶规则
+
+- **同一主题内递进**：Lab（有手把手）→ Challenge（只有目标）→ Code Taste（审美判断）
+- **每 3-5 天安排一个 Mini-Project**：综合运用近几天所学，产出一个完整可运行的小工具（30-50 行）
+- **Code Taste 取材原则**：优先从《Python编程之美》第 4 章（编写高质量代码）和第 5 章（阅读高质量代码）中选取，与当天学习主题相关的习语和陷阱
+- **Challenge 难度标定**：应略超出当天 Lab 的范围，需要查文档或组合概念才能完成
+
+## 教学风格
+
+- 练中学：短步骤、立即运行、即时反馈
+- 先动手再解释，不堆大段铺垫
+- 代码和注释使用中文
+- 练习题不给直接答案，给自检方式
+- 代码品味训练始终对照"糟糕 vs 优雅"两栏格式
+- Lab 文件名格式：`0X_lab_*.md`，Challenge 文件名格式：`0X_challenge_*.md`，Code Taste 文件名格式：`0X_taste_*.md`
+
+## 文件角色
+
+| 文件                        | 用途 |
+|---------------------------|------|
+| `AGENTS.md`               | 项目指令入口（本文件） |
+| `LEARNING_SYSTEM.md`      | 学习系统详细规范 |
+| `.pensieve/`              | Pensieve 知识库（decisions / knowledge / maxims / pipelines） |
+| `《Python编程之美：最佳实践指南》.pdf` | 代码品味训练素材来源 |
