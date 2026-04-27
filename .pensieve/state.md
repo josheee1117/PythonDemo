@@ -1,8 +1,8 @@
 # Pensieve Project State
 
 ## Lifecycle State
-- Last Event: auto-sync
-- Last Note: posttooluse Write: knowledge/teaching-standards/content.md
+- Last Event: self-improve
+- Last Note: 沉淀2条决策：AGENTS.md主入口、4环节训练结构
 
 ## Project Paths
 - Project Root: `D:/code/PythonDemo`
@@ -10,7 +10,7 @@
 - Runtime State: `.pensieve/.state/`
 
 ## Short-Term
-- Total: 0
+- Total: 2
 - Due for refine: 0 (created 7+ days ago)
 
 ## Graph

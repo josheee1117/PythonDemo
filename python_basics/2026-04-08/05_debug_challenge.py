@@ -11,7 +11,7 @@ def calculate_total(prices, discount_rate):
     for price in prices:
         total += price
     # bug 在这附近的某个地方
-    final_price = total * (1 - discount_rate)
+    final_price = total * (1 - float(discount_rate))
     return final_price
 
 
@@ -22,7 +22,7 @@ def calculate_total(prices, discount_rate):
 def format_user_info(name, age, city):
     """把用户信息格式化成一行描述"""
     # 注意每个参数的类型
-    description = name + "，" + age + "岁，来自" + city
+    description = name + "，" + str(age) + "岁，来自" + city
     return description
 
 
@@ -37,6 +37,7 @@ def find_max_index(numbers):
     for i in range(len(numbers)):
         if numbers[i] > max_value:
             max_value = numbers[i]
+            max_index=i
             # 找到更大的值了，但索引更新了吗？
     return max_index
 
